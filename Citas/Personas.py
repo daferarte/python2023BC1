@@ -38,4 +38,4 @@ class Personas:
         self.apellido=apellido
 
     def MostrarInformacion(self):
-        return f'Su informacion personal es: {self.getUsuario} {self.getPassword}'
+        return f'Su informacion personal es: {self.getUsuario()} {self.getPassword()}'
