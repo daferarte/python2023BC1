@@ -20,3 +20,5 @@ while(opcion != 0):
         print('Iniciar sesión')
     elif(opcion==4):
         print('Cerrar sesión')
+    else:
+        print('Opción incorrecta')
