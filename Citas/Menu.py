@@ -1,7 +1,8 @@
-
+from Paciente import Pacientes
 print('Bienvenidos a mi aplicación de citas médicas')
 
 opcion=-1
+paciente=''
 
 while(opcion != 0):
     print('1. Agregar paciente')
@@ -14,8 +15,10 @@ while(opcion != 0):
 
     if(opcion==1):
         print('Agregar paciente')
+        paciente=Pacientes(input('Ingrese la fecha de nacimiento del paciente: '), input('Ingrese el usuario del paciente: '),input('Ingrese la contraseña del paciente: '), input('Ingrese la cedula del paciente: '), input('Ingrese el nombre del paciente: '), input('Ingrese el apellido del paciente: '))
     elif(opcion==2):
         print('Consultar pacientes')
+        print(paciente.MostrarInformacion())
     elif(opcion==3):
         print('Iniciar sesión')
     elif(opcion==4):
