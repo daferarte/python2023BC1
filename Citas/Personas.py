@@ -6,6 +6,7 @@ class Personas:
         self.cedula = cedula
         self.nombre = nombre
         self.apellido = apellido
+        self.autenticado = False
 
     def getUsuario(self):
         return f'su usuario es: {self.usuario}'
@@ -22,6 +23,9 @@ class Personas:
     def getApellido(self):
         return self.apellido
     
+    def getAutenticado(self):
+        return self.autenticado
+    
     def setUsuario(self, usuario):
         self.usuario=usuario
 
@@ -37,5 +41,15 @@ class Personas:
     def setApellido(self, apellido):
         self.apellido=apellido
 
+    def setAutenticado(self, autenticado):
+        self.autenticado=autenticado
+
     def MostrarInformacion(self):
         return f'Su informacion personal es: {self.getUsuario()} {self.getPassword()}'
+    
+    def IniciarSesion(self, usuario, password):
+
+        if(usuario==self.usuario and password==self.password):
+            self.setAutenticado(True)
+        
+        return self.getAutenticado()

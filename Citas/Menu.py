@@ -21,7 +21,19 @@ while(opcion != 0):
         print(paciente.MostrarInformacion())
     elif(opcion==3):
         print('Iniciar sesión')
+        if(paciente.getAutenticado()):
+            print('Ya existe una sesión iniciada')
+        else:
+            if(paciente.IniciarSesion(input('Ingrese su usuario: '),input('Ingrese su contraseña: '))):
+                print('Inicio de sesión exitoso')
+            else:
+                print('Usuario y contraseña incorrecta')
     elif(opcion==4):
         print('Cerrar sesión')
+        if(paciente.getAutenticado()):
+            paciente.setAutenticado(False)
+            print('Hasta pronto')
+        else:
+            print('Aun no inicia sesión')
     else:
         print('Opción incorrecta')
