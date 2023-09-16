@@ -14,11 +14,16 @@ class Menu:
         self.ingreso=ingreso
 
     def MostrarMenu(self):
-        print('1. Agregar paciente')
-        if(self.ingreso == True):
+        
+        if(self.ingreso):
             print('2. Consultar pacientes')
-            print('3. Iniciar sesión')
-            print('4. cerrar sesión')
+            if(self.paciente.getAutenticado()):
+                print('4. cerrar sesión')
+            else:
+                print('3. Iniciar sesión') 
+        else:
+            print('1. Agregar paciente')
+            
         print('0. salir del sistema')
     
     def AgregarPaciente(self, fnacimiento, usuario, password, cedula, nombre, apellido):

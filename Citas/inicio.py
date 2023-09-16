@@ -7,7 +7,7 @@ opcion=1;
 while(opcion != 0):
     menu.MostrarMenu()
     opcion=int(input('Digite su opción: '))
-    if(opcion==1):
+    if(opcion==1)and(menu.getIngreso()==False):
         print('Agregar paciente')
         menu.AgregarPaciente(input('Ingrese la fecha de nacimiento del paciente: '), input('Ingrese el usuario del paciente: '),input('Ingrese la contraseña del paciente: '), input('Ingrese la cedula del paciente: '), input('Ingrese el nombre del paciente: '), input('Ingrese el apellido del paciente: '))
     elif((opcion==2)and(menu.getIngreso())):
